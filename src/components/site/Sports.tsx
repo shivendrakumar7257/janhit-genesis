@@ -13,7 +13,7 @@ const sports = [
 
 export function Sports() {
   return (
-    <section id="sports" className="relative py-28 md:py-36 bg-background">
+    <section id="sports" className="relative py-28 md:py-36 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader
           eyebrow="Sports & Activities"
@@ -29,10 +29,10 @@ export function Sports() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.07, duration: 0.6 }}
-              className="group relative p-8 rounded-2xl gradient-navy text-white overflow-hidden hover-lift border border-gold/20"
+              className="group relative p-8 rounded-2xl gradient-navy text-white overflow-hidden hover-lift border border-gold/20 h-full flex flex-col justify-start"
             >
               <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-gold/10 blur-3xl group-hover:bg-gold/20 transition-colors duration-500" />
-              <div className="relative flex items-start gap-5">
+              <div className="relative flex items-start gap-5 h-full">
                 <div className="h-14 w-14 rounded-xl gradient-gold flex items-center justify-center text-navy-deep shadow-gold shrink-0 group-hover:scale-110 transition-transform">
                   <s.icon className="size-6" />
                 </div>

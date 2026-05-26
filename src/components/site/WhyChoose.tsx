@@ -26,7 +26,7 @@ const features = [
 
 export function WhyChoose() {
   return (
-    <section id="why" className="relative py-28 md:py-36 bg-background">
+    <section id="why" className="relative py-28 md:py-36 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader
           eyebrow="Why Janhit"
@@ -42,10 +42,10 @@ export function WhyChoose() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.06, duration: 0.7 }}
-              className="group relative p-8 rounded-2xl bg-white border border-border hover:border-gold/50 hover-lift overflow-hidden"
+              className="group relative p-8 rounded-2xl bg-white border border-border hover:border-gold/50 hover-lift overflow-hidden h-full flex flex-col justify-start"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_top_right,oklch(0.74_0.12_85/.12),transparent_60%)]" />
-              <div className="relative">
+              <div className="relative flex flex-col h-full justify-start items-start">
                 <div className="h-14 w-14 rounded-xl gradient-navy flex items-center justify-center text-gold shadow-glass mb-6 group-hover:scale-110 transition-transform">
                   <f.icon className="size-6" />
                 </div>

@@ -21,24 +21,26 @@ export function Faq() {
           eyebrow="Questions"
           title={<>Everything you'd like <span className="italic text-gradient-gold">to know.</span></>}
         />
-        <div className="mt-16 space-y-3">
+        <div className="mt-16 space-y-5">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
               <div
                 key={i}
-                className={`rounded-2xl border transition-all ${
-                  isOpen ? "bg-white border-gold/40 shadow-glass" : "bg-white/50 border-border"
+                className={`rounded-2xl border transition-all duration-300 ${
+                  isOpen
+                    ? "bg-white border-gold/40 shadow-luxury"
+                    : "bg-white border-gray-100 shadow-luxury/5 hover:border-gold/30 hover:shadow-luxury/15 hover:-translate-y-0.5"
                 }`}
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between gap-6 text-left p-6"
+                  className="w-full flex items-center justify-between gap-6 text-left p-6 md:p-7"
                 >
-                  <span className="font-serif text-lg md:text-xl text-navy">{f.q}</span>
+                  <span className="font-serif text-lg md:text-xl text-navy font-medium leading-snug">{f.q}</span>
                   <span
                     className={`h-9 w-9 rounded-full flex items-center justify-center shrink-0 transition-all ${
-                      isOpen ? "gradient-gold text-navy-deep rotate-45" : "border border-gold/40 text-navy"
+                      isOpen ? "gradient-gold text-navy-deep rotate-45 shadow-gold" : "border border-gold/40 text-navy hover:bg-gold/10"
                     }`}
                   >
                     <Plus className="size-4" />
@@ -53,7 +55,9 @@ export function Faq() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 text-muted-foreground leading-relaxed">{f.a}</div>
+                      <div className="px-6 pb-6 md:px-7 md:pb-7 text-muted-foreground leading-relaxed text-sm md:text-base border-t border-gray-50 pt-4 mt-1">
+                        {f.a}
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>

@@ -1,106 +1,102 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Sparkles } from "lucide-react";
-import hero from "@/assets/hero-campus.jpg";
-
-const stats = [
-  { label: "Smart Classrooms", value: "100%" },
-  { label: "Robotics & STEM Labs", value: "Yes" },
-  { label: "Indoor Shooting Range", value: "Unique" },
-  { label: "Montessori Foundation", value: "Pre-K – UKG" },
-];
+import hero from "@/assets/hero-campus.png";
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen w-full overflow-hidden">
-      <img
-        src={hero}
-        alt="Janhit World School campus"
-        width={1920}
-        height={1080}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 gradient-hero" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_30%,oklch(0.12_0.05_264/.6)_100%)]" />
+    <section
+      id="top"
+      className="relative w-full flex flex-col md:aspect-[16/9] bg-white overflow-hidden z-0"
+    >
+      {/* 
+        Hero Background Image Container:
+        Locked to aspect-[4/3] on mobile for a much larger and taller image size.
+        Locked to full cover on desktop inside the 16:9 parent container.
+      */}
+      <div className="relative w-full aspect-[4/3] md:absolute md:inset-0 md:w-full md:h-full z-0 overflow-hidden bg-white">
+        <motion.img
+          src={hero}
+          alt="Janhit World School campus"
+          className="w-full h-full object-cover"
+          initial={{ scale: 1.04 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        />
+      </div>
 
-      {/* Floating admission badge */}
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1, duration: 0.8 }}
-        className="hidden md:flex absolute right-8 top-28 z-20 items-center gap-3 px-5 py-3 rounded-full glass-dark"
-      >
-        <span className="relative flex h-2.5 w-2.5">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-gold opacity-75 animate-ping" />
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold" />
-        </span>
-        <span className="text-white text-sm tracking-widest uppercase">Admissions Open · 2026-27</span>
-      </motion.div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-40 pb-24 min-h-screen flex flex-col justify-center">
+      {/* 
+        Main Overlay Content Container:
+        Expanded width to max-w-[1360px] and adjusted right padding to pull the card closer to the right margin.
+      */}
+      <div className="relative z-10 w-full md:absolute md:inset-0 md:z-20 md:max-w-[1360px] md:mx-auto md:pl-6 md:pr-4 lg:pr-8 md:pb-8 lg:pb-12 md:flex md:items-end md:justify-end">
+        
+        {/* Floating White Glassmorphic Card (Shifted further Right & Compact) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 text-gold text-xs tracking-[0.3em] uppercase w-fit"
+          initial={{ opacity: 0, x: 30, y: 15 }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
+          className="relative max-w-lg w-full bg-white md:bg-white/85 md:backdrop-blur-md border border-gray-100 md:border-white/40 rounded-3xl p-6 lg:p-8 shadow-luxury text-left mx-auto md:mx-0 mt-4 md:mt-0"
         >
-          <Sparkles className="size-3.5" /> Where Global Foundations Meet Elite Excellence
-        </motion.div>
+          {/* Admissions Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0B2566] border border-gold/30 shadow-sm self-start">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-gold opacity-75 animate-ping" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-gold" />
+            </span>
+            <span className="text-white text-[10px] font-bold tracking-widest uppercase font-sans">
+              Admissions Open · 2026-27
+            </span>
+          </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.9 }}
-          className="mt-8 font-serif text-white text-5xl md:text-7xl lg:text-8xl leading-[1.05] max-w-5xl"
-        >
-          Building Future <span className="text-gradient-gold italic">Leaders</span>
-          <br /> From Day One.
-        </motion.h1>
+          {/* Compact Title */}
+          <h1 className="mt-4 font-serif text-[#0B2566] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight">
+            Building Future <span className="italic text-gradient-gold">Leaders</span> <br /> From Day One.
+          </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-8 max-w-2xl text-lg text-white/80 leading-relaxed"
-        >
-          A next-generation school blending academics, innovation, sports, creativity, and life skills —
-          designed for the founding cohort of 2026-27 in Greater Noida.
-        </motion.p>
+          {/* Compact Subtitle Description */}
+          <p className="mt-4 text-[#0B2566]/85 text-xs sm:text-sm leading-relaxed font-sans font-normal">
+            A next-generation school blending academics, innovation, sports, creativity, and life skills —
+            designed for the founding cohort of 2026-27 in Greater Noida.
+          </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
-        >
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 h-14 rounded-md gradient-gold text-navy-deep font-semibold tracking-wide shadow-gold hover:-translate-y-0.5 transition-all"
-          >
-            <Calendar className="size-4" /> Book Campus Tour
-          </a>
-          <a
-            href="#admissions"
-            className="inline-flex items-center gap-2 px-8 h-14 rounded-md border border-gold/50 text-white hover:bg-white/5 transition-all tracking-wide"
-          >
-            Apply for Admission <ArrowRight className="size-4" />
-          </a>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.9 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-gold/20 rounded-2xl overflow-hidden glass-dark"
-        >
-          {stats.map((s) => (
-            <div key={s.label} className="p-6 md:p-8 bg-navy-deep/40">
-              <div className="font-serif text-gold text-3xl md:text-4xl">{s.value}</div>
-              <div className="mt-2 text-xs md:text-sm uppercase tracking-[0.2em] text-white/70">
-                {s.label}
+          {/* Compact Differentiators Checklist */}
+          <div className="mt-5 space-y-2.5">
+            <div className="flex items-center gap-2.5 text-[#0B2566]/90">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold border border-gold/25">
+                <Sparkles className="size-2.5" />
               </div>
+              <span className="text-[11px] font-semibold tracking-wide font-sans">Ivy-League Inspired Green Campus</span>
             </div>
-          ))}
+            <div className="flex items-center gap-2.5 text-[#0B2566]/90">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold border border-gold/25">
+                <Sparkles className="size-2.5" />
+              </div>
+              <span className="text-[11px] font-semibold tracking-wide font-sans">Future-Ready Robotics & AI Labs</span>
+            </div>
+            <div className="flex items-center gap-2.5 text-[#0B2566]/90">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold border border-gold/25">
+                <Sparkles className="size-2.5" />
+              </div>
+              <span className="text-[11px] font-semibold tracking-wide font-sans">Olympic-Standard Arena & Shooting Range</span>
+            </div>
+          </div>
+
+          {/* Compact CTA Buttons */}
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-5 h-11 rounded-md gradient-gold text-navy-deep font-semibold text-xs tracking-wide shadow-gold hover:-translate-y-0.5 hover:shadow-luxury duration-300 transition-all"
+            >
+              <Calendar className="size-3.5" /> Book Campus Tour
+            </a>
+            <a
+              href="#admissions"
+              className="inline-flex items-center gap-2 px-5 h-11 rounded-md border border-[#0B2566]/40 text-[#0B2566] hover:bg-[#0B2566]/5 hover:-translate-y-0.5 duration-300 transition-all tracking-wide text-xs font-bold"
+            >
+              Apply for Admission <ArrowRight className="size-3.5" />
+            </a>
+          </div>
+          
         </motion.div>
       </div>
     </section>

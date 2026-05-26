@@ -11,7 +11,8 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-28 md:py-36 bg-beige">
+    <section id="about" className="relative pt-24 pb-28 md:pt-32 md:pb-36 bg-white">
+
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -58,13 +59,13 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="group p-5 rounded-xl bg-white/60 border border-gold/20 hover-lift"
+                className="group p-5 rounded-xl bg-beige/40 border border-gold/20 hover-lift h-full flex flex-col justify-start items-start"
               >
                 <div className="h-10 w-10 rounded-md gradient-navy flex items-center justify-center text-gold mb-3 group-hover:scale-110 transition-transform">
                   <p.icon className="size-5" />
                 </div>
-                <div className="font-serif text-xl text-navy">{p.title}</div>
-                <div className="text-sm text-muted-foreground mt-1">{p.desc}</div>
+                <div className="font-serif text-xl text-navy font-semibold">{p.title}</div>
+                <div className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{p.desc}</div>
               </motion.div>
             ))}
           </div>

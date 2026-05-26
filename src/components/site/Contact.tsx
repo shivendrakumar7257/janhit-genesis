@@ -100,50 +100,50 @@ export function Contact() {
             <div className="grid grid-cols-2 gap-4">
               <a
                 href="tel:+910000000000"
-                className="p-5 rounded-2xl bg-white border border-border hover:border-gold/50 hover-lift flex flex-col gap-3"
+                className="p-4 rounded-2xl bg-white border border-border hover:border-gold/50 hover-lift flex flex-col gap-2.5"
               >
-                <Phone className="size-5 text-navy" />
+                <Phone className="size-4.5 text-navy" />
                 <div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Call</div>
-                  <div className="font-serif text-navy mt-1">Admissions</div>
+                  <div className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground">Call</div>
+                  <div className="font-serif text-sm text-navy font-semibold mt-0.5">Admissions</div>
                 </div>
               </a>
               <a
                 href="https://wa.me/910000000000"
                 target="_blank"
                 rel="noreferrer"
-                className="p-5 rounded-2xl bg-white border border-border hover:border-gold/50 hover-lift flex flex-col gap-3"
+                className="p-4 rounded-2xl bg-white border border-border hover:border-gold/50 hover-lift flex flex-col gap-2.5"
               >
-                <MessageCircle className="size-5 text-navy" />
+                <MessageCircle className="size-4.5 text-navy" />
                 <div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">WhatsApp</div>
-                  <div className="font-serif text-navy mt-1">Chat Now</div>
+                  <div className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground">WhatsApp</div>
+                  <div className="font-serif text-sm text-navy font-semibold mt-0.5">Chat Now</div>
                 </div>
               </a>
               <a
                 href="mailto:admissions@janhitworld.school"
-                className="p-5 rounded-2xl bg-white border border-border hover:border-gold/50 hover-lift flex flex-col gap-3"
+                className="p-4 rounded-2xl bg-white border border-border hover:border-gold/50 hover-lift flex flex-col gap-2.5"
               >
-                <Mail className="size-5 text-navy" />
+                <Mail className="size-4.5 text-navy" />
                 <div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Email</div>
-                  <div className="font-serif text-navy mt-1">Enquire</div>
+                  <div className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground">Email</div>
+                  <div className="font-serif text-sm text-navy font-semibold mt-0.5">Enquire</div>
                 </div>
               </a>
-              <div className="p-5 rounded-2xl bg-white border border-border flex flex-col gap-3">
-                <QrCode className="size-5 text-navy" />
+              <div className="p-4 rounded-2xl bg-white border border-border flex flex-col gap-2.5">
+                <QrCode className="size-4.5 text-navy" />
                 <div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Scan</div>
-                  <div className="font-serif text-navy mt-1">QR Code</div>
+                  <div className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground">Scan</div>
+                  <div className="font-serif text-sm text-navy font-semibold mt-0.5">QR Code</div>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-border shadow-glass aspect-[4/3]">
+            <div className="rounded-2xl overflow-hidden border border-border shadow-glass h-[180px] w-full">
               <iframe
                 title="Janhit World School map"
                 src="https://www.google.com/maps?q=Knowledge+Park+5,+Greater+Noida&output=embed"
-                className="w-full h-full"
+                className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />

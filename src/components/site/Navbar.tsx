@@ -28,8 +28,8 @@ export function Navbar() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-dark py-3" : "py-5"
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 bg-white border-b border-gold/20 shadow-md ${
+        scrolled ? "py-3" : "py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -38,7 +38,9 @@ export function Navbar() {
             J
           </div>
           <div className="leading-tight">
-            <div className="font-serif text-lg text-white tracking-wide">Janhit World School</div>
+            <div className="font-serif text-lg tracking-wide font-semibold text-[#0B2566] transition-colors duration-300">
+              Janhit World School
+            </div>
             <div className="text-[10px] uppercase tracking-[0.25em] text-gold">Greater Noida</div>
           </div>
         </a>
@@ -48,7 +50,7 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm tracking-wide text-white/80 hover:text-gold transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-gold hover:after:w-full after:transition-all after:duration-300"
+              className="text-sm tracking-wide font-medium text-[#0B2566]/85 hover:text-[#0B2566] transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-gold hover:after:w-full after:transition-all after:duration-300"
             >
               {l.label}
             </a>
@@ -65,7 +67,7 @@ export function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden text-white p-2"
+          className="lg:hidden p-2 text-[#0B2566] transition-colors duration-300"
         >
           {open ? <X /> : <Menu />}
         </button>
@@ -75,14 +77,14 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden mt-3 mx-4 rounded-xl glass-dark p-6 space-y-3"
+          className="lg:hidden mt-3 mx-4 rounded-xl bg-white border border-gold/20 p-6 space-y-3 shadow-2xl"
         >
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block text-white/85 hover:text-gold tracking-wide"
+              className="block text-[#0B2566]/90 hover:text-gold tracking-wide font-medium"
             >
               {l.label}
             </a>

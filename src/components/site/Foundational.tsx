@@ -3,19 +3,49 @@ import { BookOpen, Palette, Music, Shield, Sparkles, Blocks } from "lucide-react
 import img from "@/assets/foundational.jpg";
 
 const items = [
-  { icon: Blocks, title: "Montessori Lab", color: "from-rose-100 to-amber-100" },
-  { icon: BookOpen, title: "Mini Library", color: "from-sky-100 to-emerald-100" },
-  { icon: Palette, title: "Creative Arts", color: "from-amber-100 to-rose-100" },
-  { icon: Music, title: "Music & Activity Zone", color: "from-violet-100 to-sky-100" },
-  { icon: Shield, title: "Safe & Joyful Environment", color: "from-emerald-100 to-amber-100" },
-  { icon: Sparkles, title: "Sensorial Discovery", color: "from-rose-100 to-violet-100" },
+  {
+    icon: Blocks,
+    title: "Montessori Lab",
+    bgClass: "bg-rose-50/40 border-rose-100/60 hover:border-rose-300 hover:shadow-[0_12px_24px_rgba(244,63,94,0.08)]",
+    iconClass: "bg-rose-500 text-white",
+  },
+  {
+    icon: BookOpen,
+    title: "Mini Library",
+    bgClass: "bg-sky-50/40 border-sky-100/60 hover:border-sky-300 hover:shadow-[0_12px_24px_rgba(14,165,233,0.08)]",
+    iconClass: "bg-sky-500 text-white",
+  },
+  {
+    icon: Palette,
+    title: "Creative Arts",
+    bgClass: "bg-amber-50/40 border-amber-100/60 hover:border-amber-300 hover:shadow-[0_12px_24px_rgba(245,158,11,0.08)]",
+    iconClass: "bg-amber-500 text-white",
+  },
+  {
+    icon: Music,
+    title: "Music & Activity Zone",
+    bgClass: "bg-indigo-50/40 border-indigo-100/60 hover:border-indigo-300 hover:shadow-[0_12px_24px_rgba(99,102,241,0.08)]",
+    iconClass: "bg-indigo-500 text-white",
+  },
+  {
+    icon: Shield,
+    title: "Safe & Joyful Environment",
+    bgClass: "bg-emerald-50/40 border-emerald-100/60 hover:border-emerald-300 hover:shadow-[0_12px_24px_rgba(16,185,129,0.08)]",
+    iconClass: "bg-emerald-500 text-white",
+  },
+  {
+    icon: Sparkles,
+    title: "Sensorial Discovery",
+    bgClass: "bg-purple-50/40 border-purple-100/60 hover:border-purple-300 hover:shadow-[0_12px_24px_rgba(168,85,247,0.08)]",
+    iconClass: "bg-purple-500 text-white",
+  },
 ];
 
 export function Foundational() {
   return (
-    <section id="foundation" className="relative py-28 md:py-36 bg-beige overflow-hidden">
+    <section id="foundation" className="relative py-28 md:py-36 bg-white overflow-hidden">
       <div className="absolute top-20 -left-20 w-96 h-96 rounded-full bg-gold/10 blur-3xl" />
-      <div className="absolute bottom-20 -right-20 w-96 h-96 rounded-full gradient-navy opacity-10 blur-3xl" />
+      <div className="absolute bottom-20 -right-20 w-96 h-96 rounded-full gradient-navy opacity-5 blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
         <div>
@@ -38,12 +68,12 @@ export function Foundational() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07, duration: 0.5 }}
-                className={`group p-5 rounded-2xl bg-gradient-to-br ${it.color} border border-white hover-lift`}
+                className={`group p-5 rounded-2xl border hover-lift h-full flex flex-col justify-start items-start ${it.bgClass}`}
               >
-                <div className="h-10 w-10 rounded-lg bg-white/80 backdrop-blur flex items-center justify-center text-navy mb-3 group-hover:rotate-6 transition-transform">
+                <div className={`h-10 w-10 rounded-lg flex items-center justify-center mb-3 group-hover:rotate-6 transition-transform shadow-sm ${it.iconClass}`}>
                   <it.icon className="size-5" />
                 </div>
-                <div className="font-serif text-lg text-navy">{it.title}</div>
+                <div className="font-serif text-lg text-navy font-semibold">{it.title}</div>
               </motion.div>
             ))}
           </div>
@@ -62,7 +92,7 @@ export function Foundational() {
             loading="lazy"
             width={1280}
             height={896}
-            className="rounded-3xl shadow-luxury w-full object-cover aspect-[5/4]"
+            className="rounded-3xl shadow-luxury w-full object-cover aspect-[4/5]"
           />
           <div className="absolute -top-6 -left-6 glass rounded-2xl p-5 shadow-luxury">
             <div className="font-serif text-3xl text-navy">Pre-K – UKG</div>
